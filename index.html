@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МБОУ "СОШ №48" г.Чебоксары</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header class="premium-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">🎓</div>
+                    <div class="logo-text">
+                        <h1>МБОУ "СОШ №48"</h1>
+                        <p>Муниципальное бюджетное общеобразовательное учреждение</p>
+                        <span class="location">г. Чебоксары, Чувашская Республика</span>
+                    </div>
+                </div>
+                <div class="header-stats">
+                    <div class="stat-badge">
+                        <span class="stat-number">1986</span>
+                        <span class="stat-label">Год основания</span>
+                    </div>
+                    <div class="stat-badge">
+                        <span class="stat-number">38+</span>
+                        <span class="stat-label">Лет опыта</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-container">
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Разделы</h3>
+                    <button class="sidebar-toggle" id="sidebar-toggle">×</button>
+                </div>
+                <nav class="sidebar-nav">
+                    <a href="#" class="nav-item active" data-section="dashboard">
+                        <div class="nav-icon">🏠</div>
+                        <span>Главная</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="about">
+                        <div class="nav-icon">🏛️</div>
+                        <span>О школе</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="administration">
+                        <div class="nav-icon">👥</div>
+                        <span>Администрация</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="documents">
+                        <div class="nav-icon">📋</div>
+                        <span>Документы</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="education">
+                        <div class="nav-icon">🎓</div>
+                        <span>Образование</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="contacts">
+                        <div class="nav-icon">📞</div>
+                        <span>Контакты</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <main class="main-content" id="main-content">
+                <div class="mobile-header">
+                    <button class="menu-toggle" id="menu-toggle">☰</button>
+                    <h2 id="page-title">Главная</h2>
+                </div>
+                
+                <div class="content-area" id="content-area">
+                    <!-- Содержимое секций будет загружаться здесь -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
