@@ -459,6 +459,18 @@ function toggleSidebar() {
     sidebar.classList.toggle('open');
 }
 
+// Функция скрытия загрузчика
+function hideLoader() {
+    const loader = document.getElementById('loading');
+    if (loader) {
+        loader.style.opacity = '0';
+        loader.style.transition = 'opacity 0.3s ease';
+        setTimeout(() => {
+            loader.remove();
+        }, 300);
+    }
+}
+
 // Инициализация приложения
 document.addEventListener('DOMContentLoaded', function() {
     // Обработчики навигации
@@ -480,10 +492,22 @@ document.addEventListener('DOMContentLoaded', function() {
     showSection('dashboard');
     
     // Настройка темы Telegram
+    document.documentElement.style.setProperty('--tg-theme-bg-color', tg.themeParams.bg_color || '#ffffff');
+    document.documentElement.style.setProperty('--tg-theme-text-color', tg.themeParams.text_color || '#000000');
+    document.documentElement.style.setProperty('--tg-theme-hint-color', tg.themeParams.hint_color || '#999999');
+    document.documentElement.style.setProperty('--tg-theme-secondary-bg-color', tg.themeParams.secondary_bg_color || '#f1f1f1');
+    
+    // Принудительно установить цвета для лучшего контраста
     if (tg.colorScheme === 'dark') {
-        document.body.style.background = 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)';
-        // Можно добавить дополнительные настройки для темной темы
+        document.body.style.background = tg.themeParams.bg_color || '#1a1a1a';
+        document.body.style.color = tg.themeParams.text_color || '#ffffff';
+    } else {
+        document.body.style.background = tg.themeParams.bg_color || '#ffffff';
+        document.body.style.color = tg.themeParams.text_color || '#000000';
     }
+    
+    // Скрыть загрузчик после инициализации
+    setTimeout(hideLoader, 100);
 });
 
 // Обработка кнопки "Назад" в Telegram
@@ -491,9 +515,5 @@ tg.onEvent('backButtonClicked', function() {
     tg.close();
 });
 
-// Настройка главной кнопки Telegram
-tg.MainButton.setText('Обновить данные');
-tg.MainButton.onClick(function() {
-    location.reload();
-});
-tg.MainButton.show();
+// Скрыть главную кнопку (не нужна для этого приложения)
+tg.MainButton.hide();
