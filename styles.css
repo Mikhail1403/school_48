@@ -173,7 +173,7 @@ body {
     gap: 1rem;
     padding: 1rem 2rem;
     text-decoration: none;
-    color: #475569;
+    color: var(--tg-theme-hint-color, #475569);
     transition: all 0.3s ease;
     border-left: 3px solid transparent;
     font-weight: 500;
@@ -220,7 +220,7 @@ body {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: #475569;
+    color: var(--tg-theme-hint-color, #475569);
 }
 
 #page-title {
@@ -262,7 +262,7 @@ body {
 }
 
 .section-subtitle {
-    color: #64748b;
+    color: var(--tg-theme-hint-color, #64748b);
     font-size: 1.1rem;
 }
 
@@ -327,7 +327,7 @@ body {
 }
 
 .card-content {
-    color: #475569;
+    color: var(--tg-theme-text-color, #1e293b);
     line-height: 1.6;
 }
 
@@ -357,7 +357,7 @@ body {
 }
 
 .info-card p {
-    color: #475569;
+    color: var(--tg-theme-text-color, #1e293b);
     margin-bottom: 0.5rem;
 }
 
@@ -428,7 +428,7 @@ body {
 }
 
 .contact-info {
-    color: #475569;
+    color: var(--tg-theme-text-color, #1e293b);
     line-height: 1.6;
 }
 

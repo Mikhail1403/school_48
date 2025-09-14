@@ -491,17 +491,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Показать главную страницу по умолчанию
     showSection('dashboard');
     
-    // Настройка темы Telegram
-    document.documentElement.style.setProperty('--tg-theme-bg-color', tg.themeParams.bg_color || '#ffffff');
-    document.documentElement.style.setProperty('--tg-theme-text-color', tg.themeParams.text_color || '#000000');
-    document.documentElement.style.setProperty('--tg-theme-hint-color', tg.themeParams.hint_color || '#999999');
-    document.documentElement.style.setProperty('--tg-theme-secondary-bg-color', tg.themeParams.secondary_bg_color || '#f1f1f1');
-    
-    // Принудительно установить цвета для лучшего контраста
+    // Настройка темы Telegram с принудительным контрастом
     if (tg.colorScheme === 'dark') {
-        document.body.style.background = tg.themeParams.bg_color || '#1a1a1a';
-        document.body.style.color = tg.themeParams.text_color || '#ffffff';
+        // Темная тема - принудительно устанавливаем контрастные цвета
+        document.documentElement.style.setProperty('--tg-theme-bg-color', '#1a1a1a');
+        document.documentElement.style.setProperty('--tg-theme-text-color', '#ffffff');
+        document.documentElement.style.setProperty('--tg-theme-hint-color', '#cccccc');
+        document.documentElement.style.setProperty('--tg-theme-secondary-bg-color', '#2a2a2a');
+        document.body.style.background = '#1a1a1a';
+        document.body.style.color = '#ffffff';
     } else {
+        // Светлая тема
+        document.documentElement.style.setProperty('--tg-theme-bg-color', tg.themeParams.bg_color || '#ffffff');
+        document.documentElement.style.setProperty('--tg-theme-text-color', tg.themeParams.text_color || '#000000');
+        document.documentElement.style.setProperty('--tg-theme-hint-color', tg.themeParams.hint_color || '#666666');
+        document.documentElement.style.setProperty('--tg-theme-secondary-bg-color', tg.themeParams.secondary_bg_color || '#f8f8f8');
         document.body.style.background = tg.themeParams.bg_color || '#ffffff';
         document.body.style.color = tg.themeParams.text_color || '#000000';
     }
