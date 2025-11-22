@@ -5,69 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>МБОУ "СОШ №48" г.Чебоксары</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="components.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-    <!-- Индикатор загрузки -->
-    <div id="loading" style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--tg-theme-bg-color, #ffffff);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    ">
-        <div style="
-            width: 40px;
-            height: 40px;
-            border: 3px solid #e3e3e3;
-            border-top: 3px solid #3498db;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 1rem;
-        "></div>
-        <p style="color: #ffffff; margin: 0;">Загрузка...</p>
+    <!-- Продвинутый индикатор загрузки -->
+    <div id="loading" class="advanced-loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <div class="logo-icon-loader">🎓</div>
+            </div>
+            <div class="loader-progress">
+                <div class="loader-progress-bar" id="loader-progress"></div>
+            </div>
+            <p class="loader-text">Загрузка...</p>
+            <p class="loader-percentage" id="loader-percentage">0%</p>
+        </div>
+        <div class="loader-background">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
     </div>
     
-    <style>
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+    <!-- Progress indicator -->
+    <div class="progress-indicator" id="progress-indicator">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    
+    <!-- Toast notifications container -->
+    <div class="toast-container" id="toast-container"></div>
+    
+    <!-- Scroll to top button -->
+    <button class="scroll-to-top" id="scroll-to-top" aria-label="Наверх">↑</button>
     
     <div id="app">
         <header class="premium-header">
+            <!-- Декоративные фоновые элементы -->
+            <div class="header-decorations">
+                <div class="floating-orb orb-1"></div>
+                <div class="floating-orb orb-2"></div>
+                <div class="floating-orb orb-3"></div>
+                <div class="geometric-shape shape-circle"></div>
+                <div class="geometric-shape shape-triangle"></div>
+                <div class="geometric-shape shape-square"></div>
+            </div>
+            
             <div class="header-content">
                 <div class="logo-section">
-                    <div class="logo-icon">🎓</div>
+                    <div class="logo-icon float">🎓</div>
                     <div class="logo-text">
-                        <h1>МБОУ "СОШ №48"</h1>
+                        <h1 class="gradient-text">МБОУ "СОШ №48"</h1>
                         <p>Муниципальное бюджетное общеобразовательное учреждение</p>
                         <span class="location">г. Чебоксары, Чувашская Республика</span>
                     </div>
                 </div>
                 <div class="header-stats">
-                    <div class="stat-badge">
-                        <span class="stat-number">1986</span>
+                    <div class="stat-badge glassmorphism">
+                        <span class="stat-number counter" data-target="1986">0</span>
                         <span class="stat-label">Год основания</span>
                     </div>
-                    <div class="stat-badge">
-                        <span class="stat-number">38+</span>
+                    <div class="stat-badge glassmorphism">
+                        <span class="stat-number counter" data-target="39">0</span>
                         <span class="stat-label">Лет опыта</span>
                     </div>
                 </div>
             </div>
+            
+            <!-- Индикатор текущего раздела -->
+            <div class="section-indicator" id="section-indicator"></div>
         </header>
 
         <div class="main-container">
@@ -111,6 +122,23 @@
                 </div>
                 
                 <div class="content-area" id="content-area">
+                    <!-- Breadcrumbs -->
+                    <nav class="breadcrumbs" id="breadcrumbs" style="display: none;">
+                        <div class="breadcrumb-item">
+                            <a href="#" data-section="dashboard">Главная</a>
+                        </div>
+                    </nav>
+                    
+                    <!-- Поисковая строка (скрыта по умолчанию, показывается в нужных разделах) -->
+                    <div class="search-container" id="search-container" style="display: none;">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" class="search-input" id="search-input" placeholder="Поиск..." autocomplete="off">
+                        <button class="search-clear" id="search-clear">×</button>
+                    </div>
+                    
+                    <!-- Фильтры (для документов) -->
+                    <div class="filter-container" id="filter-container" style="display: none;"></div>
+                    
                     <!-- Содержимое секций будет загружаться здесь -->
                 </div>
             </main>

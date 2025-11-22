@@ -538,3 +538,534 @@ body {
         font-size: 1.5rem;
     }
 }
+
+/* ============================================
+   ПРОДВИНУТЫЕ СТИЛИ И УЛУЧШЕНИЯ
+   ============================================ */
+
+/* Продвинутый Loader */
+.advanced-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.loader-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.loader-logo {
+    margin-bottom: 2rem;
+}
+
+.logo-icon-loader {
+    font-size: 5rem;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8, #8b5cf6);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
+    animation: pulse 2s ease-in-out infinite, float 3s ease-in-out infinite;
+    margin: 0 auto;
+}
+
+.loader-progress {
+    width: 300px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 0 auto 1rem;
+}
+
+.loader-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8, #8b5cf6);
+    background-size: 200% 100%;
+    animation: gradientShift 2s ease infinite;
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.loader-text {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.loader-percentage {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.loader-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.1);
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-shape.shape-1 {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-shape.shape-2 {
+    width: 150px;
+    height: 150px;
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.floating-shape.shape-3 {
+    width: 100px;
+    height: 100px;
+    bottom: 20%;
+    left: 50%;
+    animation-delay: 4s;
+}
+
+/* Декоративные элементы хедера */
+.header-decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.3;
+    animation: float 8s ease-in-out infinite, morph 12s ease-in-out infinite;
+}
+
+.orb-1 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    top: -100px;
+    right: -50px;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+    bottom: -50px;
+    left: 10%;
+    animation-delay: 3s;
+}
+
+.orb-3 {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    top: 50%;
+    right: 20%;
+    animation-delay: 6s;
+}
+
+.geometric-shape {
+    position: absolute;
+    opacity: 0.1;
+    animation: float 10s ease-in-out infinite;
+}
+
+.shape-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    top: 20%;
+    left: 5%;
+    animation-delay: 1s;
+}
+
+.shape-triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 87px solid rgba(255, 255, 255, 0.2);
+    bottom: 15%;
+    right: 10%;
+    animation-delay: 4s;
+}
+
+.shape-square {
+    width: 80px;
+    height: 80px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transform: rotate(45deg);
+    top: 60%;
+    left: 80%;
+    animation-delay: 7s;
+}
+
+/* Glassmorphism эффект */
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Градиентный текст */
+.gradient-text {
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+/* Улучшенные карточки с 3D эффектами */
+.dashboard-card {
+    will-change: transform;
+    transform-style: preserve-3d;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-8px) rotateX(2deg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 16px;
+    padding: 2px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8, #8b5cf6);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dashboard-card:hover::after {
+    opacity: 1;
+}
+
+/* Анимированные иконки в карточках */
+.card-icon {
+    transition: all 0.3s ease;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.dashboard-card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Градиентные границы для карточек */
+.info-card {
+    position: relative;
+    background: var(--tg-theme-secondary-bg-color, #ffffff);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--tg-theme-hint-color, #e2e8f0);
+    overflow: hidden;
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8, #8b5cf6);
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease infinite;
+}
+
+/* Улучшенный сайдбар */
+.nav-item {
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.nav-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(29, 78, 216, 0.1));
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::before {
+    width: 100%;
+}
+
+.nav-icon {
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+.nav-item:hover .nav-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.nav-item.active .nav-icon {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Индикатор раздела в хедере */
+.section-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    transition: width 0.3s ease, left 0.3s ease;
+    width: 0;
+    z-index: 2;
+}
+
+/* Улучшенная типографика */
+.section-title {
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    border-radius: 2px;
+}
+
+/* Neumorphism эффект (для некоторых элементов) */
+.neumorphism {
+    background: var(--tg-theme-secondary-bg-color, #f8f9fa);
+    box-shadow: 
+        8px 8px 16px rgba(0, 0, 0, 0.1),
+        -8px -8px 16px rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+}
+
+/* Магнитный курсор эффект (для десктопа) */
+@media (hover: hover) and (pointer: fine) {
+    .dashboard-card {
+        cursor: pointer;
+    }
+    
+    .dashboard-card:hover {
+        transform: translateY(-8px) scale(1.02);
+    }
+}
+
+/* Улучшенные кнопки */
+.action-btn,
+.document-btn {
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+    transition: all 0.3s ease;
+}
+
+.action-btn:active,
+.document-btn:active {
+    transform: scale(0.95);
+}
+
+/* Skeleton screens */
+.skeleton-card {
+    background: var(--tg-theme-secondary-bg-color, #ffffff);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.skeleton-line {
+    height: 16px;
+    background: var(--tg-theme-hint-color, #e2e8f0);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    animation: skeletonLoading 1.5s ease-in-out infinite;
+}
+
+.skeleton-line.short {
+    width: 60%;
+}
+
+.skeleton-line.medium {
+    width: 80%;
+}
+
+/* Улучшенная темная тема */
+@media (prefers-color-scheme: dark) {
+    .premium-header {
+        background: linear-gradient(135deg, #0a0f1a 0%, #1a1f2e 50%, #2a2f3e 100%);
+    }
+    
+    .glassmorphism {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .info-card {
+        background: var(--tg-theme-secondary-bg-color, #1a1a1a);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Параллакс эффект */
+.parallax-layer {
+    will-change: transform;
+}
+
+/* Адаптивность для планшетов */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .header-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Landscape ориентация */
+@media (orientation: landscape) and (max-height: 600px) {
+    .premium-header {
+        padding: 1rem 2rem;
+    }
+    
+    .logo-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Календарь важных дат */
+.important-dates {
+    background: var(--tg-theme-secondary-bg-color, #ffffff);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--tg-theme-hint-color, #e2e8f0);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.important-dates h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--tg-theme-text-color, #1e293b);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.date-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--tg-theme-hint-color, #e2e8f0);
+}
+
+.date-item:last-child {
+    border-bottom: none;
+}
+
+.date-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    text-align: center;
+}
+
+.date-info {
+    flex: 1;
+}
+
+.date-title {
+    font-weight: 600;
+    color: var(--tg-theme-text-color, #1e293b);
+    margin-bottom: 0.25rem;
+}
+
+.date-description {
+    font-size: 0.875rem;
+    color: var(--tg-theme-hint-color, #64748b);
+}
+
+.date-badge {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.date-item.upcoming .date-badge {
+    background: linear-gradient(135deg, #10b981, #059669);
+    animation: pulse 2s ease-in-out infinite;
+}
+
