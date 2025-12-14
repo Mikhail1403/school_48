@@ -1,0 +1,27 @@
+{
+  "name": "school-news-app",
+  "version": "1.0.0",
+  "description": "Автоматизированная система новостей для mini app школы",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "parse": "python news_parser.py"
+  },
+  "keywords": [
+    "news",
+    "parser",
+    "school",
+    "telegram",
+    "mini-app"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-schedule": "^2.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

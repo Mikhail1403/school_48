@@ -26,6 +26,10 @@ const appData = {
                     <span class="quick-action-icon">📞</span>
                     <span class="quick-action-label">Контакты</span>
                 </a>
+                <a href="#" class="quick-action" data-section="news">
+                    <span class="quick-action-icon">📰</span>
+                    <span class="quick-action-label">Новости</span>
+                </a>
             </div>
             
             <div class="important-dates">
@@ -358,6 +362,18 @@ const appData = {
                     <p>Места проведения ГИА расположены в различных образовательных учреждениях города Чебоксары</p>
                 </div>
             </div>
+        `
+    },
+
+    news: {
+        title: 'Новости',
+        subtitle: 'Последние новости школы',
+        content: `
+            <div id="news-loading" style="text-align: center; padding: 2rem;">
+                <div class="loader-spinner"></div>
+                <p>Загрузка новостей...</p>
+            </div>
+            <div id="news-container" style="display: none;"></div>
         `
     },
 
@@ -1151,11 +1167,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 500);
     }, 1500);
     
-    // Smooth scroll для всех ссылок
+    // Smooth scroll для всех ссылок (без ошибок на "#")
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
+            const href = (this.getAttribute('href') || '').trim();
+            // Игнорируем пустые/псевдо-ссылки
+            if (!href || href === '#' || href.length <= 1) return;
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            let target = null;
+            try {
+                target = document.querySelector(href);
+            } catch (_) {
+                // Невалидный селектор — просто выходим
+                return;
+            }
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth',
@@ -1217,3 +1242,147 @@ tg.onEvent('backButtonClicked', function() {
 
 // Скрыть главную кнопку (не нужна для этого приложения)
 tg.MainButton.hide();
+
+//
+
+// Функции загрузки и отображения новостей
+// Форматирование даты из разных форматов в локальный вид
+function formatNewsDate(input) {
+    if (!input) return '';
+    if (input instanceof Date && !isNaN(input)) {
+        return input.toLocaleDateString('ru-RU');
+    }
+    // Попытка распарсить как ISO или Date-совместимую строку
+    const iso = new Date(input);
+    if (!isNaN(iso)) return iso.toLocaleDateString('ru-RU');
+
+    // Попытаться распарсить dd.mm.yyyy | dd/mm/yyyy | dd-mm-yyyy
+    const s = String(input).trim();
+    const parts = s.split(/[./-]/);
+    if (parts.length === 3) {
+        let [d, mo, y] = parts;
+        if (y.length === 2) y = '20' + y;
+        const jsDate = new Date(Number(y), Number(mo) - 1, Number(d));
+        if (!isNaN(jsDate)) return jsDate.toLocaleDateString('ru-RU');
+    }
+    return '';
+}
+
+async function loadNews() {
+    try {
+        const loading = document.getElementById('news-loading');
+        const container = document.getElementById('news-container');
+        if (!loading || !container) return;
+
+        loading.style.display = 'block';
+        container.style.display = 'none';
+        container.innerHTML = '';
+
+        const res = await fetch('news_data.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+
+        // Сортировка по дате (новые сверху)
+        const items = Array.isArray(data) ? data : (data.items || []);
+        items.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+
+        if (!items.length) {
+            container.innerHTML = '<div class="empty-state">Новостей пока нет</div>';
+        } else {
+            const fragment = document.createDocumentFragment();
+            items.forEach((n, idx) => {
+                const card = document.createElement('div');
+                card.className = 'news-card';
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(10px)';
+
+                const dateStr = formatNewsDate(n.date);
+                const imageBlock = n.image ? `<div class="news-image"><img src="${n.image}" alt="news" loading="lazy"/></div>` : '';
+                const linkBlock = n.link ? `<a class="news-link action-btn" href="#" data-url="${n.link}">Читать</a>` : '';
+
+                card.innerHTML = `
+                    <div class="news-header">
+                        <div class="news-title">${n.title || 'Без названия'}</div>
+                        <div class="news-date">${dateStr}</div>
+                    </div>
+                    ${imageBlock}
+                    <div class="news-content">${n.content || ''}</div>
+                    <div class="news-footer">${linkBlock}</div>
+                `;
+                fragment.appendChild(card);
+
+                setTimeout(() => {
+                    card.style.transition = 'all .35s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, idx * 60);
+            });
+            container.appendChild(fragment);
+
+            // Обработчик для ссылок новостей с открытием в Telegram/браузере
+            container.querySelectorAll('.news-link').forEach(a => {
+                addRippleEffect(a);
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const url = a.getAttribute('data-url');
+                    if (url) {
+                        if (tg && tg.platform !== 'unknown') tg.openLink(url); else window.open(url, '_blank');
+                    }
+                });
+            });
+        }
+    } catch (err) {
+        const container = document.getElementById('news-container');
+        if (container) container.innerHTML = `<div class=\"error-state\">Ошибка загрузки новостей: ${err.message}</div>`;
+        console.error('News load error:', err);
+    } finally {
+        const loading = document.getElementById('news-loading');
+        const container = document.getElementById('news-container');
+        if (loading) loading.style.display = 'none';
+        if (container) container.style.display = 'block';
+    }
+}
+
+// Автозагрузка новостей при переходе в раздел "Новости"
+(function patchShowSectionForNews() {
+    const originalShowSection = window.showSection;
+    window.showSection = function(sectionName) {
+        originalShowSection(sectionName);
+        if (sectionName === 'news') {
+            // Ждем появления DOM-элементов раздела новостей и затем загружаем
+            const waitAndLoadNews = (attempts = 15) => {
+                const loading = document.getElementById('news-loading');
+                const container = document.getElementById('news-container');
+                if (loading && container) {
+                    loadNews();
+                } else if (attempts > 0) {
+                    setTimeout(() => waitAndLoadNews(attempts - 1), 100);
+                }
+            };
+            waitAndLoadNews();
+        }
+    };
+})();
+
+// Минимальные стили для карточек новостей (если нет в CSS)
+(function injectNewsStyles() {
+    const id = 'news-inline-styles';
+    if (document.getElementById(id)) return;
+    const style = document.createElement('style');
+    style.id = id;
+    style.textContent = `
+    .news-card{background:var(--tg-theme-bg-color,#fff);border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:14px;margin:10px 0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+    .news-header{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:8px}
+    .news-title{font-weight:600;color:#1e293b}
+    .news-date{font-size:.85rem;color:#64748b}
+    .news-image{margin:8px 0;border-radius:10px;overflow:hidden}
+    .news-image img{width:100%;display:block}
+    .news-content{color:#334155;line-height:1.5}
+    .news-footer{margin-top:10px;display:flex;justify-content:flex-end}
+    .news-link{padding:.5rem .9rem;border-radius:10px;background:#3b82f6;color:#fff;text-decoration:none;}
+    .empty-state,.error-state{text-align:center;color:#64748b;padding:1rem}
+    `;
+    document.head.appendChild(style);
+})();
+
+//
