@@ -1,82 +1,102 @@
 [
   {
-    "title": "Скоро Новый год! Время подвести итоги и творить чудеса!",
-    "description": "Руководители театральной студии вместе с воспитанниками  решили провести заключительное мероприятие в этом календарном году. И не просто мероприятие, а театральный капустник. С пародиями на другие спе",
-    "full_description": "Руководители театральной студии вместе с воспитанниками  решили провести заключительное мероприятие в этом календарном году. И не просто мероприятие, а театральный капустник. С пародиями на другие спектакли и танцами. Уверены, это будет замечательный праздник театра, творчества и волшебства!",
-    "link": "",
-    "image": "",
-    "date": "14.12.2025"
-  },
-  {
-    "title": "Встреча учеников 11 класса с курсантом Военной академии воздушно-космической обороны им. Г.К. Жукова Ф.В. c Даниловым",
+    "id": "4a1fe7e9",
+    "title": "Героям Отечества посвящается…",
     "description": "Фотоальбом >>",
     "full_description": "Фотоальбом >>",
-    "link": "",
-    "image": "https://mou48.ucoz.ru/03122017/2025-2026/01082025/KQBOR-PKMlLisCWTi9ptP01V2NrBxYZoO5aFmWpCd3LEAQxjeo.jpg",
-    "date": "14.12.2025"
+    "link": "https://mou48.ucoz.ru/news/gerojam_otechestva_posvjashhaetsja/2025-12-12-5121",
+    "image": "https://mou48.ucoz.ru/03122017/2025-2026/01122025/irxtBeBp6aeqVSmQ4pnvGRIOlG_3sBCrDSie8C4kDLLyH0J23g.jpg",
+    "date": "19.12.2025",
+    "timestamp": "2025-12-19T17:54:31.099447"
   },
   {
-    "title": "По проекту «Пушкинская карта» учащиеся 8Л класса посетили Чувашский государственный театр \"Волга Опера\" и посмотрели балет «Дорога лебедей»",
-    "description": "Фотоальбом >>",
-    "full_description": "Фотоальбом >>",
-    "link": "https://mou48.ucoz.ru/news/po_proektu_pushkinskaja_karta_uchashhiesja_8l_klassa_posetili_chuvashskij_gosudarstvennyj_teatr_volga_opera_i_posmotreli_balet_doroga_lebedej/2025-12-08-5109",
-    "image": "https://mou48.ucoz.ru/03122017/2025-2026/0812/gTj0-QD4d9UUAfFwiZA7RxyY2biBYVnKL1qvX-GC3AAIUHrCWA.jpg",
-    "date": "14.12.2025"
-  },
-  {
-    "title": "Выпуск школьной газеты - это возможность узнать больше о событиях школьной жизни, о достижениях учащихся и ближе познакомиться с любимыми ..",
+    "id": "43ad7d91",
+    "title": "Выпуск ноябрьского номера газеты \"Школьная жизнь\"",
     "description": "Выпуск школьной газеты - это возможность узнать больше о событиях школьной жизни, о достижениях учащихся и ближе познакомиться с любимыми учителями.",
     "full_description": "Выпуск школьной газеты - это возможность узнать больше о событиях школьной жизни, о достижениях учащихся и ближе познакомиться с любимыми учителями.",
-    "link": "https://mou48.ucoz.ru/news/vypusk_shkolnoj_gazety_ehto_vozmozhnost_uznat_bolshe_o_sobytijakh_shkolnoj_zhizni_o_dostizhenijakh_uchashhikhsja_i_blizhe_poznakomitsja_s_ljubimymi/2025-12-08-5108",
-    "image": "https://mou48.ucoz.ru/03122017/2025-2026/0812/photo_2025-12-12_09-35-42.jpg",
-    "date": "14.12.2025"
+    "link": "https://mou48.ucoz.ru/news/vypusk_nojabrskogo_nomera_gazety_shkolnaja_zhizn/2025-12-12-5129",
+    "image": "https://mou48.ucoz.ru/03122017/2025-2026/12122025/SP8Bt84xa8iLWNgkJD2crfpkna_HGPAukZP6sAP3zdJxqDeU-W.jpg",
+    "date": "19.12.2025",
+    "timestamp": "2025-12-19T17:54:31.099666"
   },
   {
-    "title": "Урок мужества в 8 – 9 классах",
+    "id": "a39b6410",
+    "title": "Беседа \"Здоровое питание\" с учащимися 3А класса",
+    "description": "Фотоальбом >>",
+    "full_description": "Фотоальбом >>",
+    "link": "https://mou48.ucoz.ru/news/beseda_zdorovoe_pitanie_s_uchashhimisja_3a_klassa/2025-12-12-5128",
+    "image": "https://mou48.ucoz.ru/03122017/2025-2026/12122025/N0gP9hNsthPqeP9xPwsObR0b-DK4qNFrkQOXEsbjL75HZub3Um.jpg",
+    "date": "19.12.2025",
+    "timestamp": "2025-12-19T17:54:31.099829"
+  },
+  {
+    "id": "dd748390",
+    "title": "Увлекательный библиотечный урок для обучающихся 5л класса",
+    "description": "Фотоальбом >>",
+    "full_description": "Фотоальбом >>",
+    "link": "https://mou48.ucoz.ru/news/uvlekatelnyj_bibliotechnyj_urok_dlja_obuchajushhikhsja_5l_klassa/2025-12-12-5127",
+    "image": "https://mou48.ucoz.ru/03122017/2025-2026/12122025/yaUyUe4Y0RBgZVm3uqdx1qMz2mQM3MIVGGDrG5v-USeOw6oh0D.jpg",
+    "date": "19.12.2025",
+    "timestamp": "2025-12-19T17:54:31.099994"
+  },
+  {
+    "id": "61823d63",
+    "title": "РОССИИ СЛАВНЫЕ СЫНЫ",
+    "description": "Фотоальбом >>",
+    "full_description": "Фотоальбом >>",
+    "link": "https://mou48.ucoz.ru/news/rossii_slavnye_syny/2025-12-11-5120",
+    "image": "https://mou48.ucoz.ru/03122017/2025-2026/11112025/irEtbdtgWjQPyvja9VM1M6z0hL10W0NPuEIiPKpLYHxZSOtL0v.jpg",
+    "date": "19.12.2025",
+    "timestamp": "2025-12-19T17:54:31.100153"
+  },
+  {
+    "id": "803268f1",
+    "title": "Осторожно! Тонкий лед!",
+    "description": "ПАМЯТКА ДЛЯ ДЕТЕЙ И РОДИТЕЛЕЙ!Осенний лед в период с ноября по январь, то есть до наступления устойчивых морозов, непрочен. Скрепленный вечерним или ночным холодом, он еще способен выдерживать небольш",
+    "full_description": "ПАМЯТКА ДЛЯ ДЕТЕЙ И РОДИТЕЛЕЙ!Осенний лед в период с ноября по январь, то есть до наступления устойчивых морозов, непрочен. Скрепленный вечерним или ночным холодом, он еще способен выдерживать небольшую нагрузку, но днем, быстро нагреваясь от просачивающейся через него талой воды, становится пористым и очень слабым.",
+    "link": "https://mou48.ucoz.ru/news/ostorozhno_tonkij_led/2025-12-11-5125",
+    "image": "https://mou48.ucoz.ru/03122017/2025-2026/11112025/qMKzeHdMT4kvI-NJN9x4HhWmB7CzimlbgAkUbE1OK2WqGf7aYZ.jpg",
+    "date": "19.12.2025",
+    "timestamp": "2025-12-19T17:54:31.100305"
+  },
+  {
+    "id": "d2ee9adb",
+    "title": "Урок финансовой грамотности на тему «Дропы. Кто это и как им не стать?»",
+    "description": "11 декабря в 10 «У» классе прошел урок финансовой грамотности на тему «Дропы. Кто это и как им не стать?».Ребята узнали , как мошенники ищут дроперов, можно ли оказаться замешанным в преступление по н",
+    "full_description": "11 декабря в 10 «У» классе прошел урок финансовой грамотности на тему «Дропы. Кто это и как им не стать?».Ребята узнали , как мошенники ищут дроперов, можно ли оказаться замешанным в преступление по неведению, и чем грозит такое посредничество.",
+    "link": "",
+    "image": "https://mou48.ucoz.ru/03122017/2025-2026/01112025/X5Wm4ftWKYPLm4VVhMprCtMm-GE1vGW4Km31gvjar_Ax7CD0kC.jpg",
+    "date": "19.12.2025",
+    "timestamp": "2025-12-19T17:54:31.100434"
+  },
+  {
+    "id": "23b2e199",
+    "title": "Урок финансовой грамотности с учениками 7А класса, посвященный облигациям",
     "description": "Фотоальбом >>",
     "full_description": "Фотоальбом >>",
     "link": "",
-    "image": "https://mou48.ucoz.ru/03122017/2025-2026/0812/F9FttFq88fk7-mtB-QCJIzROaUZXzloD8zt75kzneYK3-D9_G9.jpg",
-    "date": "14.12.2025"
+    "image": "https://mou48.ucoz.ru/03122017/2025-2026/01112025/qdxtMz3oeN_sE-Z-BIZy6dtJaKoc6vQYQNj-rEhomKpjssEY9s.jpg",
+    "date": "19.12.2025",
+    "timestamp": "2025-12-19T17:54:31.100641"
   },
   {
-    "title": "Участие в очном туре Олимпиады машиностроения Чувашии в ЧГУ имени И.Н.Ульянова",
+    "id": "29ae3934",
+    "title": "Городской семинар для учителей начальных классов",
     "description": "Фотоальбом >>",
     "full_description": "Фотоальбом >>",
-    "link": "https://mou48.ucoz.ru/news/uchastie_v_ochnom_ture_olimpiady_mashinostroenija_chuvashii_v_chgu_imeni_i_n_uljanova/2025-12-05-5105",
-    "image": "https://mou48.ucoz.ru/03122017/2025-2026/05122025/CyTOjevet8KFF97nsg9Que1wG2ucPsnkX9VryD-USxF8OjLhXp.jpg",
-    "date": "14.12.2025"
+    "link": "https://mou48.ucoz.ru/news/gorodskoj_seminar_dlja_uchitelej_nachalnykh_klassov/2025-12-11-5122",
+    "image": "https://mou48.ucoz.ru/03122017/2025-2026/10122025/p1gXd6T_FjjzIKoz8eGc6Ni6NRED4nY0CmTPWJYY-vIwxyGZ-M.jpg",
+    "date": "19.12.2025",
+    "timestamp": "2025-12-19T17:54:31.100891"
   },
   {
-    "title": "Урок Мужества во 2А классе на тему «Героями не рождаются, героями становятся!»",
+    "id": "45604fe0",
+    "title": "Курс занятий «Россия – мои горизонты»",
     "description": "Фотоальбом >>",
     "full_description": "Фотоальбом >>",
-    "link": "https://mou48.ucoz.ru/news/urok_muzhestva_vo_2a_klasse_na_temu_gerojami_ne_rozhdajutsja_gerojami_stanovjatsja/2025-12-05-5104",
-    "image": "https://mou48.ucoz.ru/03122017/2025-2026/05122025/-KGjzGRf7tWqXbXe1SU7xQSC49yeEkero1r4DsaWJYFt-CBAIe.jpg",
-    "date": "14.12.2025"
-  },
-  {
-    "title": "Международная акция \"Тест по истории \"Уроки Второй мировой\"\"",
-    "description": "Фотоальбом >>",
-    "full_description": "Фотоальбом >>",
-    "link": "https://mou48.ucoz.ru/news/mezhdunarodnaja_akcija_test_po_istorii_uroki_vtoroj_mirovoj/2025-12-05-5103",
-    "image": "https://mou48.ucoz.ru/03122017/2025-2026/05122025/_gWS5YsibN3SV4p_vTiYmNNQM3h3ZnEgDl-D2GIQbUwJOnD-gb.jpg",
-    "date": "14.12.2025"
-  },
-  {
-    "title": "Завтрак с директором",
-    "description": "Фотоальбом >>",
-    "full_description": "Фотоальбом >>",
-    "link": "https://mou48.ucoz.ru/news/zavtrak_s_direktorom/2025-12-05-5102",
-    "image": "https://mou48.ucoz.ru/03122017/2025-2026/05122025/BCA2eltCwSeTWZSDd0rPzSbFu9MqZ0OvbTtsTvF9fl-q6g_8Oe.jpg",
-    "date": "14.12.2025"
-  },
-  {
-    "title": "День волонтёра",
-    "description": "Фотоальбом >>",
-    "full_description": "Фотоальбом >>",
-    "link": "https://mou48.ucoz.ru/news/den_volontjora/2025-12-04-5101",
-    "image": "https://mou48.ucoz.ru/03122017/2025-2026/04122025/9wqUlbEri6r7Y0HNV1_sjxhBin6MacuMK8OjxJ4m6r-g3I72C-.jpg",
-    "date": "14.12.2025"
+    "link": "https://mou48.ucoz.ru/news/kurs_zanjatij_rossija_moi_gorizonty/2025-12-11-5126",
+    "image": "https://mou48.ucoz.ru/03122017/2025-2026/11112025/LffI1bHH-8DpvLznvpX0Kp4DPHtFeMhlTXt_sVE0s9sFLM2zNz.jpg",
+    "date": "19.12.2025",
+    "timestamp": "2025-12-19T17:54:31.101174"
   }
 ]
